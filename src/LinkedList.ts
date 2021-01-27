@@ -14,7 +14,7 @@ class LinkedList<T> {
       return;
     }
 
-    let last: LinkedListNode<T> = this.head;
+    let last = this.head;
     while (last.next) {
       last = last.next;
     }
@@ -22,8 +22,8 @@ class LinkedList<T> {
     last.next = newNode;
   }
 
-  forEach(callback: (T, int) => void) {
-    let last: LinkedListNode<T> = this.head;
+  forEach(callback: (val: T, idx: number) => void) {
+    let last = this.head;
     let idx = 0;
 
     while (last) {
@@ -35,7 +35,7 @@ class LinkedList<T> {
 
   toArray(): T[] {
     const newArray = [];
-    let last: LinkedListNode<T> = this.head;
+    let last = this.head;
     while (last) {
       newArray.push(last.value);
       last = last.next;
@@ -44,7 +44,7 @@ class LinkedList<T> {
   }
 
   info() {
-    let last: LinkedListNode<T> = this.head;
+    let last = this.head;
     while (last) {
       console.log(last.value);
       last = last.next;
@@ -54,7 +54,7 @@ class LinkedList<T> {
   get length(): number {
     let count = 0;
 
-    let last: LinkedListNode<T> = this.head;
+    let last = this.head;
     while (last) {
       count += 1;
       last = last.next;
@@ -72,7 +72,7 @@ class LinkedList<T> {
     }
 
     let count = 0;
-    let temp: LinkedListNode<T> = this.head;
+    let temp: LinkedListNode<T> | undefined = this.head;
     while (temp && count + 1 !== index) {
       temp = temp.next;
       count += 1;

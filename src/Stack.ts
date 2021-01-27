@@ -21,7 +21,7 @@ class Stack<T> {
     }
   }
 
-  forEach(callback: (T, int) => void) {
+  forEach(callback: (val: T, idx: number) => void) {
     let last = this.head;
     let idx = 0;
 
