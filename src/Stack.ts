@@ -31,6 +31,18 @@ class Stack<T> {
       idx += 1;
     }
   }
+
+  get length(): number {
+    let count = 0;
+
+    let last = this.head;
+    while (last) {
+      count += 1;
+      last = last.next;
+    }
+
+    return count;
+  }
 }
 
 export default Stack;
