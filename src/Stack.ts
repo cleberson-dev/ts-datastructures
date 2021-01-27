@@ -20,6 +20,17 @@ class Stack<T> {
       last = last.next;
     }
   }
+
+  forEach(callback: (T, int) => void) {
+    let last = this.head;
+    let idx = 0;
+
+    while (last) {
+      callback(last.value, idx);
+      last = last.next;
+      idx += 1;
+    }
+  }
 }
 
 export default Stack;
