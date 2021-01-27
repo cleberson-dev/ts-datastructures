@@ -1,11 +1,11 @@
 type LinkedListNode<T> = {
   next?: LinkedListNode<T>;
   value: T;
-}
+};
 
 class LinkedList<T> {
   private head?: LinkedListNode<T>;
-  
+
   push(value: T) {
     const newNode = { value };
 
@@ -20,6 +20,17 @@ class LinkedList<T> {
     }
 
     last.next = newNode;
+  }
+
+  forEach(callback: (T, int) => void) {
+    let last: LinkedListNode<T> = this.head;
+    let idx = 0;
+    
+    while (last) {
+      callback(last.value, idx);
+      last = last.next;
+      idx += 1;
+    }
   }
 
   info() {
