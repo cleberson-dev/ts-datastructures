@@ -62,6 +62,26 @@ class LinkedList<T> {
 
     return count;
   }
+
+  deleteAt(index: number) {
+    if (!this.head) return;
+
+    if (index === 0) {
+      this.head = this.head.next;
+      return;
+    }
+
+    let count = 0;
+    let temp: LinkedListNode<T> = this.head;
+    while (temp && count + 1 !== index) {
+      temp = temp.next;
+      count += 1;
+    }
+    if (!temp) return;
+    if (count + 1 !== index) return;
+
+    temp.next = temp.next?.next;
+  }
 }
 
 export default LinkedList;
