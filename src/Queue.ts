@@ -20,6 +20,13 @@ class Queue<T> {
     last.next = newNode;
   }
 
+  pull(): T {
+    if (!this.head) throw new Error('Nothing to pull');
+    const removeeValue = this.head.value;
+    this.head = this.head.next;
+    return removeeValue;
+  }
+
   info() {
     let last = this.head;
     while (last) {
