@@ -82,6 +82,15 @@ class LinkedList<T> {
 
     temp.next = temp.next?.next;
   }
+
+  *[Symbol.iterator]() {
+    let last = this.head;
+
+    while (last) {
+      yield last.value;
+      last = last.next;
+    }
+  }
 }
 
 export default LinkedList;
