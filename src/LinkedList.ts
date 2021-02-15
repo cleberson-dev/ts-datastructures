@@ -3,7 +3,7 @@ type LinkedListNode<T> = {
   value: T;
 };
 
-class LinkedList<T> {
+class LinkedList<T = any> {
   private head?: LinkedListNode<T>;
 
   constructor(initialValue?: T) {
