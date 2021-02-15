@@ -6,6 +6,12 @@ type LinkedListNode<T> = {
 class LinkedList<T> {
   private head?: LinkedListNode<T>;
 
+  constructor(initialValue?: T) {
+    if (initialValue !== undefined) {
+      this.push(initialValue);
+    }
+  }
+
   push(value: T) {
     const newNode = { value };
 
